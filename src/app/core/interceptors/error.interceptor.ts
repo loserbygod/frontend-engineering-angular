@@ -6,24 +6,55 @@ import {
   HttpRequest,
   HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { AppStateService } from '../state/app-state.service';
+import { Observable, switchMap, throwError, catchError } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { AuthStateService } from '../state/auth-state.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private state: AppStateService) {}
+
+  constructor(
+    private authService: AuthService,
+    private authStateService: AuthStateService
+  ) {}
 
   intercept(
-    req: HttpRequest<any>,
+    request: HttpRequest<unknown>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
-    return next.handle(req).pipe(
+  ): Observable<HttpEvent<unknown>> {
+
+    return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status >= 500) {
-          this.state.setErroApi(true);
+
+        if (error.status !== 401) {
+          return throwError(() => error);
         }
-        return throwError(() => error);
+
+        if (this.authStateService.isRefreshing()) {
+          return this.authStateService.waitForToken().pipe(
+            switchMap(token =>
+              next.handle(
+                request.clone({
+                  setHeaders: { Authorization: `Bearer ${token}` }
+                })
+              )
+            )
+          );
+        }
+
+        this.authStateService.startRefresh();
+
+        return this.authService.refreshToken().pipe(
+          switchMap(newToken => {
+            this.authStateService.endRefresh(newToken);
+
+            return next.handle(
+              request.clone({
+                setHeaders: { Authorization: `Bearer ${newToken}` }
+              })
+            );
+          })
+        );
       })
     );
   }
