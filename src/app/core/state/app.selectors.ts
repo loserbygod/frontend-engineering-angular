@@ -1,17 +1,42 @@
-import { map } from 'rxjs/operators';
-import { AppStore } from './app.store';
+import { inject } from '@angular/core';
+import { combineLatest, map } from 'rxjs';
+import { AppStateService } from './app-state.service';
 
+/**
+ * Selectors centralizados
+ * Responsáveis por derivar estado a partir do AppState
+ */
 export class AppSelectors {
+  private state = inject(AppStateService);
 
-  static loading(store: AppStore) {
-    return store.state$.pipe(map(state => state.loading));
-  }
+  /**
+   * Exemplo clássico:
+   * Tela pode ser exibida?
+   */
+  readonly podeExibirConteudo$ = combineLatest([
+    this.state.carregando$,
+    this.state.possuiErroApi$
+  ]).pipe(
+    map(([carregando, erro]) => !carregando && !erro)
+  );
 
-  static user(store: AppStore) {
-    return store.state$.pipe(map(state => state.user));
-  }
+  /**
+   * Exibir fallback de erro global?
+   */
+  readonly deveExibirErroGlobal$ = combineLatest([
+    this.state.possuiErroApi$,
+    this.state.carregando$
+  ]).pipe(
+    map(([erro, carregando]) => erro && !carregando)
+  );
 
-  static error(store: AppStore) {
-    return store.state$.pipe(map(state => state.error));
-  }
+  /**
+   * Sessão inválida (token expirado)
+   */
+  readonly sessaoExpirada$ = combineLatest([
+    this.state.tokenExpirado$,
+    this.state.usuario$
+  ]).pipe(
+    map(([tokenExpirado, usuario]) => tokenExpirado && !!usuario)
+  );
 }
