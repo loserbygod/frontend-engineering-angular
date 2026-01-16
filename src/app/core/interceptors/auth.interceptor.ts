@@ -3,33 +3,53 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest
+  HttpRequest,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AuthService } from '../services/auth.service';
+import { Observable, catchError, switchMap, throwError } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
+  private isRefreshing = false;
+
   constructor(private authService: AuthService) {}
 
   intercept(
-    request: HttpRequest<any>,
+    request: HttpRequest<unknown>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  ): Observable<HttpEvent<unknown>> {
 
     const token = this.authService.getToken();
 
-    if (!token) {
-      return next.handle(request);
-    }
+    const authRequest = token
+      ? request.clone({
+          setHeaders: { Authorization: `Bearer ${token}` }
+        })
+      : request;
 
-    const authRequest = request.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`
-      }
-    });
+    return next.handle(authRequest).pipe(
+      catchError((error: HttpErrorResponse) => {
 
-    return next.handle(authRequest);
+        if (error.status === 401 && !this.isRefreshing) {
+          this.isRefreshing = true;
+
+          return this.authService.refreshToken().pipe(
+            switchMap(newToken => {
+              this.isRefreshing = false;
+
+              return next.handle(
+                request.clone({
+                  setHeaders: { Authorization: `Bearer ${newToken}` }
+                })
+              );
+            })
+          );
+        }
+
+        return throwError(() => error);
+      })
+    );
   }
 }
