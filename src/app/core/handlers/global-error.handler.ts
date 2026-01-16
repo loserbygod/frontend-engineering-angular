@@ -1,12 +1,20 @@
 import { ErrorHandler, Injectable } from '@angular/core';
-import { LoggingService } from '../services/logging.service';
+import { ObservabilityService } from '../observability/observability.service';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
 
-  constructor(private logger: LoggingService) {}
+  constructor(
+    private observability: ObservabilityService
+  ) {}
 
   handleError(error: unknown): void {
-    this.logger.error('Unhandled error', error);
+
+    this.observability.logError(error, {
+      source: 'GlobalErrorHandler'
+    });
+
+    // mantém o erro no console para debug local
+    console.error(error);
   }
 }
