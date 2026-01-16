@@ -72,7 +72,6 @@ core/
 │ └── logger.service.ts
 ```
 
-
 ### Rules:
 - Must not depend on `features`
 - Should be framework-aware but domain-agnostic
@@ -104,7 +103,6 @@ shared/
 ├── utils/
 ```
 
-
 ### Rules:
 - No business logic
 - No direct API calls
@@ -134,7 +132,6 @@ features/
 │ ├── exchange-routing.module.ts
 │ └── exchange.module.ts
 ```
-
 
 ### Characteristics:
 - Clear boundaries between features
@@ -166,7 +163,6 @@ state/
 ├── exchange/
 │ └── exchange-state.service.ts
 ```
-
 
 ### Patterns Used:
 - `BehaviorSubject` for state storage
@@ -209,6 +205,25 @@ This allows:
 - fast unit tests
 - stable E2E tests
 - clearer test boundaries
+
+---
+
+## Testing Strategy
+
+This project follows modern Angular and RxJS testing practices.
+
+### RxJS Unit Tests
+
+- `BehaviorSubject` is used for state management, which emits values synchronously.
+- For this reason, tests avoid the use of `done()` callbacks.
+- Instead, tests rely on:
+  - direct `subscribe` when synchronous, or
+  - `firstValueFrom` with `async/await` for clarity and type safety.
+
+This approach:
+- avoids TypeScript typing issues with `done`
+- produces more deterministic tests
+- aligns with current Angular and Jasmine best practices
 
 ---
 

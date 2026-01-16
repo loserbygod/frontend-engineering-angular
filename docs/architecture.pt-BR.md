@@ -198,6 +198,25 @@ A separação de responsabilidades reduz:
 
 ---
 
+## Estratégia de Testes
+
+Este projeto segue boas práticas modernas de testes no Angular com RxJS, priorizando legibilidade, previsibilidade e tipagem segura.
+
+### Testes Unitários com RxJS
+
+- O gerenciamento de estado utiliza `BehaviorSubject`, que emite valores de forma síncrona.
+- Por esse motivo, os testes **não utilizam callbacks com `done()`**.
+- Em vez disso, adotamos:
+  - `subscribe` direto quando o comportamento é síncrono, ou
+  - `firstValueFrom` com `async/await` quando queremos maior clareza e controle assíncrono.
+
+Essa abordagem:
+- evita problemas de tipagem do TypeScript relacionados ao uso de `done`
+- torna os testes mais determinísticos e fáceis de entender
+- está alinhada com as boas práticas atuais do Angular e do Jasmine
+
+---
+
 ## 🔄 Observabilidade e Tratamento de Erros
 
 Foi implementado um **Global Error Handler**, responsável por:
